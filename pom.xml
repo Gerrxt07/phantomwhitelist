@@ -9,7 +9,7 @@
     <version>1.1.0</version>
 
     <name>PhantomWhitelist</name>
-    <description>Ein Whitelist-Plugin mit Discord-Integration für Paper Server</description>
+    <description>A Whitelist-Plugin for Minecraft Servers using Discord</description>
 
     <properties>
         <java.version>21</java.version>
