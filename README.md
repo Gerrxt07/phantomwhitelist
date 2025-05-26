@@ -130,6 +130,32 @@ Die Logs werden farblich formatiert im Discord-Kanal angezeigt:
 - 🔵 Blau für Informationen
 - 🟣 Lila für Debug-Meldungen
 
+## 🗺️ Roadmap
+
+Hier ist unsere Roadmap für die zukünftige Entwicklung von PhantomWhitelist:
+
+| Status | Feature | Beschreibung | Geplant für |
+|:------:|---------|-------------|:-----------:|
+| ✅ | Discord-Integration | Grundlegende Discord-Rollenprüfung und Verifizierung | v1.0.0 |
+| ✅ | Spieler-Freeze | Spieler einfrieren bis zur Discord-Verifizierung | v1.0.0 |
+| ✅ | Discord Webhook | Ereignisprotokollierung über Discord Webhooks | v1.0.0 |
+| 📅 | Text-Überarbeitung | Komplette Überarbeitung der Texte und unterstützung für mehrere Sprachen | v1.1.0 |
+| 📅 | (Automatische) Updates | In-Game Benachrichtigung und automatische Updates | v1.2.0 |
+| 💡 | MySQL-Integration | Volle Unterstützung für MySQL-Datenbanken | v1.3.0 |
+| 🔮 | Bungeecord/Velocity | Netzwerkweite Whitelist-Synchronisation | v2.0.0 |
+| 🔮 | Web-Dashboard | Webbasierte Benutzeroberfläche zur Verwaltung der Whitelist | v3.0.0 |
+| 🔮 | API für Entwickler | API für andere Plugins zur Integration | v4.0.0 |
+
+### Legende
+
+- ✅ Implementiert und verfügbar
+- 🔜 In Entwicklung
+- 📅 Geplant für die nahe Zukunft
+- 💡 Konzeptphase
+- 🔮 Langfristige Vision
+
+Möchtest du an der Entwicklung teilnehmen oder hast du Funktionswünsche? [Eröffne ein Issue](https://github.com/gerrxt/phantom-whitelist/issues) oder tritt unserem [Discord-Server](https://discord.gg/phantomwhitelist) bei!
+
 ## 💻 Entwicklung
 
 ### Entwicklungsumgebung einrichten
@@ -157,3 +183,4 @@ Dieses Projekt steht unter der [MIT-Lizenz](LICENSE).
 ## 👏 Credits
 
 Entwickelt von [gerrxt](https://github.com/gerrxt07).
+Entwicklerteam von [Phantom Community](https://phantomcommunity.de).
