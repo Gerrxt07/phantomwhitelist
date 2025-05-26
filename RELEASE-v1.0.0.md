@@ -1,84 +1,86 @@
+# PhantomWhitelist v1.0.0
+
 ![PhantomWhitelist Banner](assets/banner.png)
 
-Die erste stabile Version des PhantomWhitelist Plugins für Minecraft Paper/Purpur Server
+The first stable version of the PhantomWhitelist Plugin for Minecraft Paper/Purpur Server
 
-## 🚀 Release-Datum: 26. Mai 2025
+## 🚀 Release Date: May 26, 2025
 
 ---
 
-## ✨ Hauptfeatures
+## ✨ Main Features
 
-### 🤖 Discord-Integration
+### 🤖 Discord Integration
 
-- Verbindung mit einem Discord-Bot für rollenbasierte Whitelist
-- Automatische Überprüfung von Discord-Rollen für die Whitelist-Berechtigung
-- Verknüpfung von Minecraft-Konten mit Discord-Benutzern
+- Connection with a Discord bot for role-based whitelist
+- Automatic verification of Discord roles for whitelist permission
+- Linking Minecraft accounts with Discord users
 
-### 📋 Whitelist-Management
+### 📋 Whitelist Management
 
-- Eigene Whitelist-Funktionalität mit erweiterten Konfigurationsmöglichkeiten
-- Verwalten von Spielern über einfache Befehle
-- Unterstützung für die Standard-Minecraft-Whitelist als Fallback
+- Custom whitelist functionality with advanced configuration options
+- Manage players through simple commands
+- Support for standard Minecraft whitelist as fallback
 
-### ⏳ Spieler-Freeze-System
+### ⏳ Player Freeze System
 
-- Automatisches Einfrieren von Spielern bis zur Discord-Verifizierung
-- Zeitbegrenzung (2 Minuten) für die Verifizierung
-- Visuelle Hinweise und Anweisungen für neue Spieler
+- Automatic freezing of players until Discord verification
+- Time limit (2 minutes) for verification
+- Visual hints and instructions for new players
 
-### 🖥️ Serverseitige Validierung
+### 🖥️ Server-side Validation
 
-- Überprüfung der Discord-Rollen bei jedem Login
-- Sicheres Kicken von Spielern bei Verlust der erforderlichen Rolle
-- Optimierte Leistung durch lokales Caching von Benutzerverknüpfungen
+- Verification of Discord roles at each login
+- Secure kicking of players when required role is lost
+- Optimized performance through local caching of user links
 
-## 🔧 Technische Details
+## 🔧 Technical Details
 
-- **Unterstützte Minecraft-Versionen:** 1.21.1 oder höher
-- **Java-Version:** Java 21 oder höher
-- **Abhängigkeiten:**
+- **Supported Minecraft Versions:** 1.21.1 or higher
+- **Java Version:** Java 21 or higher
+- **Dependencies:**
   - JDA (Java Discord API) 5.0.0-beta.13
   - Paper/Purpur API 1.21.1-R0.1
 
 ## 🛠️ Installation
 
-1. Lade die JAR-Datei herunter und lege sie in deinen `/plugins` Ordner
-2. Starte deinen Server neu oder verwende `/reload confirm`
-3. Konfiguriere das Plugin in der erzeugten `config.yml`
-4. Richte deinen Discord-Bot ein und füge ihn zu deinem Server hinzu
-5. Füge die Bot-Token und Server-ID in die Konfiguration ein
-6. Starte den Server erneut, um die Discord-Integration zu aktivieren
+1. Download the JAR file and place it in your `/plugins` folder
+2. Restart your server or use `/reload confirm`
+3. Configure the plugin in the generated `config.yml`
+4. Set up your Discord bot and add it to your server
+5. Add the bot token and server ID to the configuration
+6. Restart the server to activate Discord integration
 
-## 📝 Befehle
+## 📝 Commands
 
-| Befehl | Beschreibung | Berechtigung |
+| Command | Description | Permission |
 |--------|--------------|--------------|
-| `/discord <Discord-Name>` | Verknüpft deinen Minecraft-Account mit deinem Discord-Konto | Keine |
-| `/pwhitelist add <Spieler>` | Fügt einen Spieler zur Whitelist hinzu | `phantomwhitelist.admin` |
-| `/pwhitelist remove <Spieler>` | Entfernt einen Spieler von der Whitelist | `phantomwhitelist.admin` |
-| `/pwhitelist list` | Zeigt alle Spieler auf der Whitelist an | `phantomwhitelist.command` |
-| `/pwhitelist reload` | Lädt die Konfiguration neu | `phantomwhitelist.reload` |
+| `/discord <Discord-Name>` | Links your Minecraft account with your Discord account | None |
+| `/pwhitelist add <Player>` | Adds a player to the whitelist | `phantomwhitelist.admin` |
+| `/pwhitelist remove <Player>` | Removes a player from the whitelist | `phantomwhitelist.admin` |
+| `/pwhitelist list` | Shows all players on the whitelist | `phantomwhitelist.command` |
+| `/pwhitelist reload` | Reloads the configuration | `phantomwhitelist.reload` |
 
-## ⚙️ Konfiguration
+## ⚙️ Configuration
 
-Schaue dir die [Homepage](https://github.com/gerrxt/phantomwhitelist) an.
+Check out the [Homepage](https://github.com/gerrxt/phantomwhitelist).
 
-## 🐛 Bekannte "Probleme"
+## 🐛 Known "Issues"
 
-- Bei sehr großen Discord-Servern (>10.000 Mitglieder) kann die erste Verbindung mehrere Sekunden dauern.
-- Die Discord-Rollenüberprüfung kann leicht verzögert sein, wenn der Discord-API-Server stark ausgelastet ist.
-- Das Einfrieren von Spielern funktioniert möglicherweise nicht mit allen Gameplay-Modifikationen.
+- For very large Discord servers (>10,000 members), the initial connection may take several seconds.
+- Discord role verification may be slightly delayed when the Discord API server is under heavy load.
+- Player freezing may not work with all gameplay modifications.
 
-## 🙏 Danksagungen
+## 🙏 Acknowledgements
 
-Besonderer Dank gilt:
+Special thanks to:
 
-- Den Paper/Spigot-Entwicklern für ihre hervorragende Server-Software
-- Den Entwicklern der JDA-Bibliothek für die Discord-Integration
-- Allen Testern, die bei der Entwicklung dieses Plugins geholfen haben
+- The Paper/Spigot developers for their excellent server software
+- The developers of the JDA library for Discord integration
+- All testers who helped during the development of this plugin
 
 ---
 
-Bei Problemen oder Fragen eröffne bitte ein [GitHub Issue](https://github.com/gerrxt/phantomwhitelist/issues) oder tritt unserem [Discord-Server](https://discord.gg/phantomwhitelist) bei.
+For problems or questions, please open a [GitHub Issue](https://github.com/gerrxt/phantomwhitelist/issues) or join our [Discord Server](https://discord.gg/phantomwhitelist).
 
-© 2025 gerrxt | [MIT-Lizenz](LICENSE)
+© 2025 gerrxt | [MIT License](LICENSE)

@@ -2,183 +2,202 @@
 
 ![PhantomWhitelist Banner](assets/banner.png)
 
-*Ein Minecraft Paper/Purpur Server Plugin für die Verwaltung einer Whitelist mit Discord-Integration.*
+*A Minecraft Paper/Purpur server plugin for whitelist management with Discord integration and multi-language support.*
 
 ---
 
-## ✨ Funktionen
+## ✨ Features
 
-- 📋 Eigene Whitelist-Verwaltung mit Konfigurationsmöglichkeiten
-- 🤖 Discord-Integration mit Rollenbasierter Whitelist
-- 📢 Discord-Webhook-Logging für wichtige Serverereignisse
-- ⏳ Automatische Spieler-Freeze bei fehlender Discord-Verknüpfung
-- 🎮 Unterstützung für Minecraft 1.21.1+
-- ☕ Kompatibel mit Java 21+
+- 📋 Custom whitelist management with configuration options
+- 🤖 Discord integration with role-based whitelist
+- 📢 Discord webhook logging for important server events
+- ⏳ Automatic player freeze for players without Discord verification
+- 🌐 Multi-language support (English, German, French, Spanish, Portuguese, Polish, Russian, Chinese)
+- 🎮 Support for Minecraft 1.21.1+
+- ☕ Compatible with Java 21+
 
-## 📋 Anforderungen
+## 📋 Requirements
 
-- 📄 Paper Basierter Server (Version 1.21.1 oder höher - PaperMC, Purpur, Pufferfisch, CanvasMC etc.)
-- ☕ Java 21 oder höher
-- 🤖 Discord-Bot mit entsprechenden Berechtigungen (für die Discord-Integration)
+- 📄 Paper-based server (Version 1.21.1 or higher - PaperMC, Purpur, Pufferfish, CanvasMC etc.)
+- ☕ Java 21 or higher
+- 🤖 Discord bot with appropriate permissions (for Discord integration)
 
 ## 🚀 Installation
 
-1. Lade die neueste Version des Plugins aus dem [Releases](https://github.com/gerrxt07/phantomwhitelist/releases)-Bereich herunter.
-2. Platziere die JAR-Datei in deinem Server-Ordner unter `/plugins`.
-3. Starte deinen Server neu oder verwende einen Plugin-Manager, um das Plugin zu laden.
-4. Konfiguriere das Plugin nach deinen Wünschen in der `config.yml`.
-5. Für die Discord-Integration:
-   - Erstelle einen Discord-Bot auf der [Discord Developer Portal](https://discord.com/developers/applications)
-   - Aktiviere die "Server Members Intent" unter Bot > Privileged Gateway Intents
-   - Füge deinen Bot zu deinem Discord-Server hinzu
-   - Trage Bot-Token und Server-ID in die config.yml ein
+1. Download the latest version of the plugin from the [Releases](https://github.com/gerrxt07/phantomwhitelist/releases) section.
+2. Place the JAR file in your server folder under `/plugins`.
+3. Restart your server or use a plugin manager to load the plugin.
+4. Configure the plugin to your preferences in the `config.yml`.
+5. For Discord integration:
+   - Create a Discord bot on the [Discord Developer Portal](https://discord.com/developers/applications)
+   - Enable "Server Members Intent" under Bot > Privileged Gateway Intents
+   - Add your bot to your Discord server
+   - Enter the bot token and server ID in the config.yml
 
-## 🔄 Funktionsweise
+## 🔄 How It Works
 
-1. Wenn ein Spieler den Server betritt, wird überprüft, ob er bereits mit Discord verknüpft ist
-2. Falls nicht, wird der Spieler eingefroren und aufgefordert, seinen Discord-Namen einzugeben
-3. Der Spieler hat 2 Minuten Zeit, den `/discord <Discord-Name>` Befehl auszuführen
-4. Das Plugin überprüft, ob der angegebene Discord-Benutzer auf dem Server existiert und die erforderliche Rolle hat
-5. Bei erfolgreicher Verknüpfung kann der Spieler normal spielen
-6. Bei jedem weiteren Login wird überprüft, ob der verknüpfte Discord-Account noch die erforderliche Rolle hat
+1. When a player joins the server, the plugin checks if they are already linked with Discord
+2. If not, the player is frozen and prompted to enter their Discord name
+3. The player has 2 minutes to execute the `/discord <Discord-Name>` command
+4. The plugin checks if the specified Discord user exists on the server and has the required role
+5. Upon successful verification, the player can play normally
+6. On each subsequent login, the plugin verifies that the linked Discord account still has the required role
 
-## 💬 Befehle
+## 💬 Commands
 
-- `/discord <Discord-Name>` - Verknüpft deinen Minecraft-Account mit deinem Discord-Account
-- `/pwhitelist reload` - Lädt die Konfiguration neu
-- `/pwhitelist add <Spielername>` - Fügt einen Spieler zur Whitelist hinzu
-- `/pwhitelist remove <Spielername>` - Entfernt einen Spieler von der Whitelist
-- `/pwhitelist list` - Zeigt alle Spieler auf der Whitelist an
+- `/discord <Discord-Name>` - Links your Minecraft account with your Discord account
+- `/pwhitelist reload` - Reloads configuration and language files
+- `/pwhitelist add <Player-Name>` - Adds a player to the whitelist
+- `/pwhitelist remove <Player-Name>` - Removes a player from the whitelist
+- `/pwhitelist list` - Shows all players on the whitelist
 
-## 🔑 Berechtigungen
+## 🔑 Permissions
 
-- `phantomwhitelist.command` - Erlaubt die Verwendung der Basisbefehle
-- `phantomwhitelist.reload` - Erlaubt das Neuladen der Konfiguration
-- `phantomwhitelist.admin` - Erlaubt alle administrativen Aktionen
+- `phantomwhitelist.command` - Allows the use of basic commands
+- `phantomwhitelist.reload` - Allows reloading the configuration
+- `phantomwhitelist.admin` - Allows all administrative actions
 
-## 🤖 Discord-Bot Einrichtung
+## 🤖 Discord Bot Setup
 
-1. Besuche das [Discord Developer Portal](https://discord.com/developers/applications)
-2. Klicke auf "New Application" und gib deinem Bot einen Namen
-3. Gehe zum "Bot" Tab und klicke auf "Add Bot"
-4. Unter "Privileged Gateway Intents" aktiviere "SERVER MEMBERS INTENT"
-5. Kopiere das Bot-Token und füge es in deine config.yml ein
-6. Gehe zum "OAuth2" Tab > URL Generator
-7. Wähle die Scopes "bot" und "applications.commands"
-8. Bei Bot Permissions wähle mindestens: "Read Messages/View Channels", "Send Messages"
-9. Kopiere die generierte URL und öffne sie in deinem Browser, um den Bot zu deinem Server hinzuzufügen
-10. Aktiviere die Discord-Integration in der config.yml und starte den Server neu
+1. Visit the [Discord Developer Portal](https://discord.com/developers/applications)
+2. Click on "New Application" and name your bot
+3. Go to the "Bot" tab and click "Add Bot"
+4. Under "Privileged Gateway Intents", enable "SERVER MEMBERS INTENT"
+5. Copy the bot token and paste it into your config.yml
+6. Go to the "OAuth2" tab > URL Generator
+7. Select the scopes "bot" and "applications.commands"
+8. For Bot Permissions, select at minimum: "Read Messages/View Channels", "Send Messages"
+9. Copy the generated URL and open it in your browser to add the bot to your server
+10. Enable Discord integration in the config.yml and restart your server
 
-## ⚙️ Konfiguration
+## ⚙️ Configuration
 
-Nach dem ersten Start des Plugins wird eine Konfigurationsdatei unter `plugins/PhantomWhitelist/config.yml` erstellt. Hier kannst du alle Einstellungen anpassen:
+After the first start of the plugin, a configuration file will be created under `plugins/PhantomWhitelist/config.yml`. Here you can adjust all settings:
 
 ```yaml
-# Whitelist-Einstellungen
+# Plugin language (en, de, fr, es, pt, pl, ru, zh)
+language: "en"
+
+# Whitelist settings
 whitelist:
   enabled: true
   storage-method: 'file'
 
-# Discord-Integration
+# Discord integration
 discord:
   enabled: true
-  token: "DEIN_DISCORD_BOT_TOKEN_HIER"
-  guild-id: "DEINE_DISCORD_SERVER_ID_HIER"
+  token: "YOUR_DISCORD_BOT_TOKEN_HERE"
+  guild-id: "YOUR_DISCORD_SERVER_ID_HERE"
   whitelisted-role-ids:
-    - "ROLLE_ID_1"
-    - "ROLLE_ID_2"
+    - "ROLE_ID_1"
+    - "ROLE_ID_2"
 ```
+
+## 🌐 Multi-language Support
+
+The plugin supports 8 different languages:
+
+- 🇬🇧 English (en)
+- 🇩🇪 German (de)
+- 🇫🇷 French (fr)
+- 🇪🇸 Spanish (es)
+- 🇵🇹 Portuguese (pt)
+- 🇵🇱 Polish (pl)
+- 🇷🇺 Russian (ru)
+- 🇨🇳 Chinese (simplified) (zh)
+
+To change the language, adjust the `language` parameter in the config.yml. The language files are located in the `plugins/PhantomWhitelist/lang` folder and can be customized if needed.
 
 ## 📢 Discord Webhook Logging
 
-Das Plugin kann wichtige Ereignisse auch direkt in einen Discord-Kanal über Webhooks loggen:
+The plugin can log important events directly to a Discord channel via webhooks:
 
-1. Erstelle einen Webhook in deinem Discord-Server:
-   - Rechtsklick auf einen Kanal > Server-Einstellungen > Integrationen
-   - Klicke auf "Webhook erstellen" und gib einen Namen ein
-   - Kopiere die Webhook-URL
+1. Create a webhook in your Discord server:
+   - Right-click on a channel > Server Settings > Integrations
+   - Click "Create Webhook" and enter a name
+   - Copy the webhook URL
 
-2. Füge die Webhook-URL in die Konfigurationsdatei ein:
+2. Add the webhook URL to the configuration file:
 
    ```yaml
    # Discord Webhook Logging
    webhook:
       enabled: false
-      url: "DEINE_DISCORD_WEBHOOK_URL_HIER"
+      url: "YOUR_DISCORD_WEBHOOK_URL_HERE"
       use-batching: true
       batch-interval: 30
       rate-limit: 5000
       log-level: "WARNING"
    ```
 
-3. Konfiguriere die Webhook-Einstellungen nach deinen Bedürfnissen:
-   - `use-batching`: Sammelt Nachrichten und sendet sie in Batches
-   - `batch-interval`: Intervall in Sekunden, wie oft Nachrichten gesendet werden
-   - `rate-limit`: Minimale Zeit zwischen einzelnen Nachrichten (in Millisekunden)
-   - `log-level`: Festlegen, welche Arten von Nachrichten gesendet werden sollen
+3. Configure the webhook settings according to your needs:
+   - `use-batching`: Collects messages and sends them in batches
+   - `batch-interval`: Interval in seconds for how often messages are sent
+   - `rate-limit`: Minimum time between individual messages (in milliseconds)
+   - `log-level`: Specify which types of messages should be sent
 
-Die Logs werden farblich formatiert im Discord-Kanal angezeigt:
+The logs are displayed with color formatting in the Discord channel:
 
-- 🟢 Grün für Erfolge und positive Meldungen
-- 🔴 Rot für Fehler und kritische Probleme
-- 🟡 Gelb für Warnungen
-- 🔵 Blau für Informationen
-- 🟣 Lila für Debug-Meldungen
+- 🟢 Green for successes and positive messages
+- 🔴 Red for errors and critical issues
+- 🟡 Yellow for warnings
+- 🔵 Blue for information
+- 🟣 Purple for debug messages
 
 ## 🗺️ Roadmap
 
-Hier ist unsere Roadmap für die zukünftige Entwicklung von PhantomWhitelist:
+Here is our roadmap for the future development of PhantomWhitelist:
 
-| Status | Feature | Beschreibung | Geplant für |
+| Status | Feature | Description | Planned for |
 |:------:|---------|-------------|:-----------:|
-| ✅ | Discord-Integration | Grundlegende Discord-Rollenprüfung und Verifizierung | v1.0.0 |
-| ✅ | Spieler-Freeze | Spieler einfrieren bis zur Discord-Verifizierung | v1.0.0 |
-| ✅ | Discord Webhook | Ereignisprotokollierung über Discord Webhooks | v1.0.0 |
-| 📅 | Text-Überarbeitung | Komplette Überarbeitung der Texte und unterstützung für mehrere Sprachen | v1.1.0 |
-| 📅 | (Automatische) Updates | In-Game Benachrichtigung und automatische Updates | v1.2.0 |
-| 💡 | MySQL-Integration | Volle Unterstützung für MySQL-Datenbanken | v1.3.0 |
-| 🔮 | Bungeecord/Velocity | Netzwerkweite Whitelist-Synchronisation | v2.0.0 |
-| 🔮 | Web-Dashboard | Webbasierte Benutzeroberfläche zur Verwaltung der Whitelist | v3.0.0 |
-| 🔮 | API für Entwickler | API für andere Plugins zur Integration | v4.0.0 |
+| ✅ | Discord Integration | Basic Discord role checking and verification | v1.0.0 |
+| ✅ | Player Freeze | Freeze players until Discord verification | v1.0.0 |
+| ✅ | Discord Webhook | Event logging via Discord webhooks | v1.0.0 |
+| ✅ | Multi-language Support | Support for 8 languages with configurable language files | v1.1.0 |
+| 📅 | (Automatic) Updates | In-game notification and automatic updates | v1.2.0 |
+| 💡 | MySQL Integration | Full support for MySQL databases | v1.3.0 |
+| 🔮 | Bungeecord/Velocity | Network-wide whitelist synchronization | v2.0.0 |
+| 🔮 | Web Dashboard | Web-based interface for whitelist management | v3.0.0 |
+| 🔮 | API for Developers | API for other plugins to integrate with | v4.0.0 |
 
-### Legende
+### Legend
 
-- ✅ Implementiert und verfügbar
-- 🔜 In Entwicklung
-- 📅 Geplant für die nahe Zukunft
-- 💡 Konzeptphase
-- 🔮 Langfristige Vision
+- ✅ Implemented and available
+- 🔜 In development
+- 📅 Planned for the near future
+- 💡 Concept phase
+- 🔮 Long-term vision
 
-Wir haben auch ein Interaktives und Aktualisiertes [Trello Board](https://trello.com/b/PEWsQBMy/phantom-whitelist)!
+We also have an interactive and updated [Trello Board](https://trello.com/b/PEWsQBMy/phantom-whitelist)!
 
-Möchtest du an der Entwicklung teilnehmen oder hast du Funktionswünsche? [Eröffne ein Issue](https://github.com/gerrxt07/phantom-whitelist/issues) oder tritt unserem [Discord-Server](https://phantomcommunity.de/discord) bei!
+Would you like to participate in development or have feature requests? [Open an Issue](https://github.com/gerrxt07/phantom-whitelist/issues) or join our [Discord Server](https://phantomcommunity.de/discord)!
 
-## 💻 Entwicklung
+## 💻 Development
 
-### Entwicklungsumgebung einrichten
+### Setting Up the Development Environment
 
-1. Klone das Repository:
+1. Clone the repository:
 
    ```bash
    git clone https://github.com/gerrxt/phantom-whitelist.git
    ```
 
-2. Importiere das Projekt in deine IDE (z.B. IntelliJ, Eclipse, VSCode etc.).
+2. Import the project into your IDE (e.g., IntelliJ, Eclipse, VSCode, etc.).
 
-3. Führe den Maven-Build aus:
+3. Run the Maven build:
 
    ```bash
    mvn clean package
    ```
 
-Die kompilierte JAR-Datei findest du im `target`-Ordner.
+The compiled JAR file can be found in the `target` folder.
 
-## 📜 Lizenz
+## 📜 License
 
-Dieses Projekt steht unter der [MIT-Lizenz](LICENSE).
+This project is licensed under the [MIT License](LICENSE).
 
 ## 👏 Credits
 
-Entwickelt von [gerrxt](https://github.com/gerrxt07).
+Developed by [gerrxt](https://github.com/gerrxt07).
 
-Entwicklerteam von [Phantom Community](https://phantomcommunity.de).
+Developer team from [Phantom Community](https://phantomcommunity.de).
