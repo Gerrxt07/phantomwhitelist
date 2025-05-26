@@ -1,5 +1,5 @@
 # PhantomWhitelist Konfiguration
-# Version: 1.0
+# Version: 1.0.0
 
 # Debug-Modus (zusätzliche Ausgaben im Konsolen-Log)
 debug: false
