@@ -76,8 +76,7 @@ public class DiscordManager {
         
         try {
             console.info("Verbinde mit Discord...");
-            
-            // JDA mit den notwendigen Intents initialisieren
+              // JDA mit den notwendigen Intents initialisieren
             EnumSet<GatewayIntent> intents = EnumSet.of(
                     GatewayIntent.GUILD_MEMBERS,
                     GatewayIntent.GUILD_MESSAGES
@@ -85,10 +84,21 @@ public class DiscordManager {
             
             jda = JDABuilder.createDefault(token)
                     .enableIntents(intents)
+                    .setAutoReconnect(true)
+                    .setContextEnabled(false) // Optimierung: Context nicht benötigt
                     .build();
             
-            // Warten auf die Initialisierung
-            jda.awaitReady();
+            // Warten auf die Initialisierung mit Timeout
+            try {
+                jda.awaitReady();
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+                console.error("Initialisierung des Discord-Bots wurde unterbrochen.");
+                if (webhook != null) {
+                    webhook.error("Initialisierung des Discord-Bots wurde unterbrochen.");
+                }
+                return;
+            }
             
             // Guild abrufen
             guild = jda.getGuildById(guildId);
