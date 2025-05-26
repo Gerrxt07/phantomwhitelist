@@ -23,7 +23,7 @@
 
 ## 🚀 Installation
 
-1. Lade die neueste Version des Plugins aus dem [Releases](https://github.com/gerrxt/phantom-whitelist/releases)-Bereich herunter.
+1. Lade die neueste Version des Plugins aus dem [Releases](https://github.com/gerrxt/phantomwhitelist/releases)-Bereich herunter.
 2. Platziere die JAR-Datei in deinem Server-Ordner unter `/plugins`.
 3. Starte deinen Server neu oder verwende einen Plugin-Manager, um das Plugin zu laden.
 4. Konfiguriere das Plugin nach deinen Wünschen in der `config.yml`.
