@@ -154,7 +154,7 @@ Hier ist unsere Roadmap für die zukünftige Entwicklung von PhantomWhitelist:
 - 💡 Konzeptphase
 - 🔮 Langfristige Vision
 
-Möchtest du an der Entwicklung teilnehmen oder hast du Funktionswünsche? [Eröffne ein Issue](https://github.com/gerrxt/phantom-whitelist/issues) oder tritt unserem [Discord-Server](https://discord.gg/phantomwhitelist) bei!
+Möchtest du an der Entwicklung teilnehmen oder hast du Funktionswünsche? [Eröffne ein Issue](https://github.com/gerrxt/phantom-whitelist/issues) oder tritt unserem [Discord-Server](https://phantomcommunity.de/discord) bei!
 
 ## 💻 Entwicklung
 
