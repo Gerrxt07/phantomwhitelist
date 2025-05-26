@@ -23,7 +23,7 @@
 
 ## 🚀 Installation
 
-1. Lade die neueste Version des Plugins aus dem [Releases](https://github.com/gerrxt/phantomwhitelist/releases)-Bereich herunter.
+1. Lade die neueste Version des Plugins aus dem [Releases](https://github.com/gerrxt07/phantomwhitelist/releases)-Bereich herunter.
 2. Platziere die JAR-Datei in deinem Server-Ordner unter `/plugins`.
 3. Starte deinen Server neu oder verwende einen Plugin-Manager, um das Plugin zu laden.
 4. Konfiguriere das Plugin nach deinen Wünschen in der `config.yml`.
@@ -154,7 +154,7 @@ Hier ist unsere Roadmap für die zukünftige Entwicklung von PhantomWhitelist:
 - 💡 Konzeptphase
 - 🔮 Langfristige Vision
 
-Möchtest du an der Entwicklung teilnehmen oder hast du Funktionswünsche? [Eröffne ein Issue](https://github.com/gerrxt/phantom-whitelist/issues) oder tritt unserem [Discord-Server](https://phantomcommunity.de/discord) bei!
+Möchtest du an der Entwicklung teilnehmen oder hast du Funktionswünsche? [Eröffne ein Issue](https://github.com/gerrxt07/phantom-whitelist/issues) oder tritt unserem [Discord-Server](https://phantomcommunity.de/discord) bei!
 
 ## 💻 Entwicklung
 
