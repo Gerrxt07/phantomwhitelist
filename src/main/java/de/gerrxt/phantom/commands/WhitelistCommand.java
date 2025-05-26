@@ -1,6 +1,7 @@
 package de.gerrxt.phantom.commands;
 
 import de.gerrxt.phantom.Main;
+import de.gerrxt.phantom.util.LanguageManager;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.NamedTextColor;
 import org.bukkit.Bukkit;
@@ -21,9 +22,11 @@ import java.util.stream.Collectors;
 public class WhitelistCommand implements CommandExecutor, TabCompleter {
     
     private final Main plugin;
+    private final LanguageManager lang;
     
     public WhitelistCommand(Main plugin) {
         this.plugin = plugin;
+        this.lang = plugin.getLanguageManager();
     }
     
     @Override
@@ -33,28 +36,25 @@ public class WhitelistCommand implements CommandExecutor, TabCompleter {
             return true;
         }
         
-        switch (args[0].toLowerCase()) {
-            case "reload" -> {
+        switch (args[0].toLowerCase()) {            case "reload" -> {
                 if (!sender.hasPermission("phantomwhitelist.reload")) {
-                    sender.sendMessage(Component.text(plugin.getConfig().getString("messages.no-permission", 
-                            "Du hast keine Berechtigung, diesen Befehl auszuführen.")).color(NamedTextColor.RED));
+                    sender.sendMessage(Component.text(lang.getMessage("whitelist.command.no-permission")).color(NamedTextColor.RED));
                     return true;
                 }
                 
                 plugin.reloadConfig();
-                sender.sendMessage(Component.text(plugin.getConfig().getString("messages.config-reloaded", 
-                        "Konfiguration wurde neu geladen.")).color(NamedTextColor.GREEN));
+                plugin.getLanguageManager().reload(); // Auch Sprachdateien neu laden
+                sender.sendMessage(Component.text(lang.getMessage("plugin.reload")).color(NamedTextColor.GREEN));
                 return true;
             }
             case "add" -> {
                 if (!sender.hasPermission("phantomwhitelist.admin")) {
-                    sender.sendMessage(Component.text(plugin.getConfig().getString("messages.no-permission", 
-                            "Du hast keine Berechtigung, diesen Befehl auszuführen.")).color(NamedTextColor.RED));
+                    sender.sendMessage(Component.text(lang.getMessage("whitelist.command.no-permission")).color(NamedTextColor.RED));
                     return true;
                 }
                 
                 if (args.length < 2) {
-                    sender.sendMessage(Component.text("Verwendung: /pwhitelist add <Spielername>").color(NamedTextColor.RED));
+                    sender.sendMessage(Component.text(lang.getMessage("whitelist.command.help-add")).color(NamedTextColor.RED));
                     return true;
                 }
                 
@@ -62,28 +62,21 @@ public class WhitelistCommand implements CommandExecutor, TabCompleter {
                 // Vorläufig verwenden wir die Server-Whitelist
                 OfflinePlayer target = Bukkit.getOfflinePlayerIfCached(args[1]);
                 if (target == null) {
-                    sender.sendMessage(Component.text(plugin.getConfig().getString("messages.player-not-found", 
-                                    "Spieler {player} wurde nicht gefunden.")
-                            .replace("{player}", args[1])).color(NamedTextColor.RED));
+                    sender.sendMessage(Component.text(lang.getMessage("whitelist.command.player-not-found", "player", args[1])).color(NamedTextColor.RED));
                     return true;
                 }
                 
                 target.setWhitelisted(true);
-                String message = plugin.getConfig().getString("messages.player-added", 
-                                "Spieler {player} wurde zur Whitelist hinzugefügt.")
-                        .replace("{player}", target.getName());
-                sender.sendMessage(Component.text(message).color(NamedTextColor.GREEN));
+                sender.sendMessage(Component.text(lang.getMessage("whitelist.command.player-added", "player", target.getName())).color(NamedTextColor.GREEN));
                 return true;
-            }
-            case "remove" -> {
+            }            case "remove" -> {
                 if (!sender.hasPermission("phantomwhitelist.admin")) {
-                    sender.sendMessage(Component.text(plugin.getConfig().getString("messages.no-permission", 
-                            "Du hast keine Berechtigung, diesen Befehl auszuführen.")).color(NamedTextColor.RED));
+                    sender.sendMessage(Component.text(lang.getMessage("whitelist.command.no-permission")).color(NamedTextColor.RED));
                     return true;
                 }
                 
                 if (args.length < 2) {
-                    sender.sendMessage(Component.text("Verwendung: /pwhitelist remove <Spielername>").color(NamedTextColor.RED));
+                    sender.sendMessage(Component.text(lang.getMessage("whitelist.command.help-remove")).color(NamedTextColor.RED));
                     return true;
                 }
                 
@@ -91,23 +84,17 @@ public class WhitelistCommand implements CommandExecutor, TabCompleter {
                 // Vorläufig verwenden wir die Server-Whitelist
                 OfflinePlayer target = Bukkit.getOfflinePlayerIfCached(args[1]);
                 if (target == null) {
-                    sender.sendMessage(Component.text(plugin.getConfig().getString("messages.player-not-found", 
-                                    "Spieler {player} wurde nicht gefunden.")
-                            .replace("{player}", args[1])).color(NamedTextColor.RED));
+                    sender.sendMessage(Component.text(lang.getMessage("whitelist.command.player-not-found", "player", args[1])).color(NamedTextColor.RED));
                     return true;
                 }
                 
                 target.setWhitelisted(false);
-                String message = plugin.getConfig().getString("messages.player-removed", 
-                                "Spieler {player} wurde von der Whitelist entfernt.")
-                        .replace("{player}", target.getName());
-                sender.sendMessage(Component.text(message).color(NamedTextColor.RED));
+                sender.sendMessage(Component.text(lang.getMessage("whitelist.command.player-removed", "player", target.getName())).color(NamedTextColor.RED));
                 return true;
             }
             case "list" -> {
                 if (!sender.hasPermission("phantomwhitelist.command")) {
-                    sender.sendMessage(Component.text(plugin.getConfig().getString("messages.no-permission", 
-                            "Du hast keine Berechtigung, diesen Befehl auszuführen.")).color(NamedTextColor.RED));
+                    sender.sendMessage(Component.text(lang.getMessage("whitelist.command.no-permission")).color(NamedTextColor.RED));
                     return true;
                 }
                 
@@ -116,14 +103,13 @@ public class WhitelistCommand implements CommandExecutor, TabCompleter {
                         .map(OfflinePlayer::getName)
                         .collect(Collectors.toList());
                 
-                sender.sendMessage(Component.text("Whitelist (" + whitelistedPlayers.size() + " Spieler):").color(NamedTextColor.YELLOW));
+                sender.sendMessage(Component.text(lang.getMessage("whitelist.command.list-title") + " (" + whitelistedPlayers.size() + "):").color(NamedTextColor.YELLOW));
                 if (whitelistedPlayers.isEmpty()) {
-                    sender.sendMessage(Component.text("Die Whitelist ist leer.").color(NamedTextColor.GRAY));
+                    sender.sendMessage(Component.text(lang.getMessage("whitelist.command.list-empty")).color(NamedTextColor.GRAY));
                 } else {
                     sender.sendMessage(Component.text(String.join(", ", whitelistedPlayers)).color(NamedTextColor.WHITE));
                 }
-                return true;
-            }
+                return true;            }
             default -> {
                 showHelp(sender);
                 return true;
@@ -132,15 +118,15 @@ public class WhitelistCommand implements CommandExecutor, TabCompleter {
     }
     
     private void showHelp(CommandSender sender) {
-        sender.sendMessage(Component.text("PhantomWhitelist Befehle:").color(NamedTextColor.YELLOW));
-        sender.sendMessage(Component.text("/pwhitelist reload").color(NamedTextColor.GOLD)
-                .append(Component.text(" - Lädt die Konfiguration neu").color(NamedTextColor.GRAY)));
-        sender.sendMessage(Component.text("/pwhitelist add <Spielername>").color(NamedTextColor.GOLD)
-                .append(Component.text(" - Fügt einen Spieler zur Whitelist hinzu").color(NamedTextColor.GRAY)));
-        sender.sendMessage(Component.text("/pwhitelist remove <Spielername>").color(NamedTextColor.GOLD)
-                .append(Component.text(" - Entfernt einen Spieler von der Whitelist").color(NamedTextColor.GRAY)));
-        sender.sendMessage(Component.text("/pwhitelist list").color(NamedTextColor.GOLD)
-                .append(Component.text(" - Zeigt alle Spieler auf der Whitelist").color(NamedTextColor.GRAY)));
+        sender.sendMessage(Component.text(lang.getMessage("whitelist.command.help-title")).color(NamedTextColor.YELLOW));
+        sender.sendMessage(Component.text(lang.getMessage("whitelist.command.help-reload").split(" - ")[0]).color(NamedTextColor.GOLD)
+                .append(Component.text(" - " + lang.getMessage("whitelist.command.help-reload").split(" - ")[1]).color(NamedTextColor.GRAY)));
+        sender.sendMessage(Component.text(lang.getMessage("whitelist.command.help-add").split(" - ")[0]).color(NamedTextColor.GOLD)
+                .append(Component.text(" - " + lang.getMessage("whitelist.command.help-add").split(" - ")[1]).color(NamedTextColor.GRAY)));
+        sender.sendMessage(Component.text(lang.getMessage("whitelist.command.help-remove").split(" - ")[0]).color(NamedTextColor.GOLD)
+                .append(Component.text(" - " + lang.getMessage("whitelist.command.help-remove").split(" - ")[1]).color(NamedTextColor.GRAY)));
+        sender.sendMessage(Component.text(lang.getMessage("whitelist.command.help-list").split(" - ")[0]).color(NamedTextColor.GOLD)
+                .append(Component.text(" - " + lang.getMessage("whitelist.command.help-list").split(" - ")[1]).color(NamedTextColor.GRAY)));
     }
     
     @Override
