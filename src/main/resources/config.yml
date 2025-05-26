@@ -1,120 +1,186 @@
-# PhantomWhitelist Konfiguration
-# Version: 1.0.0
+#==============================================================================
+#                          PHANTOM WHITELIST CONFIGURATION
+#                                  Version 1.1.0
+#==============================================================================
+# GitHub: https://github.com/gerrxt07/phantomwhitelist
+# Discord: https://phantomcommunity.de/discord
+#==============================================================================
 
-# Debug-Modus (zusätzliche Ausgaben im Konsolen-Log)
+#------------------------------------------------------------------------------
+# GENERAL SETTINGS
+#------------------------------------------------------------------------------
+
+# Enable debug mode for additional console logging (true/false)
 debug: false
 
-# Plugin-Präfix für Chat-Nachrichten
+# Plugin language
+# Available options: en, de, fr, es, pt, pl, ru, zh
+# ┌────────┬───────────────────
+# │ Code   │ Language          
+# ├────────┼───────────────────
+# │ en     │ English (Default)
+# │ de     │ Deutsch (German)
+# │ fr     │ Français (French)
+# │ es     │ Español (Spanish)
+# │ pt     │ Português (Portuguese)
+# │ pl     │ Polski (Polish)
+# │ ru     │ Русский (Russian)
+# │ zh     │ 简体中文 (Chinese)
+# └────────┴───────────────────
+language: "en"
+
+# Chat message prefix (supports color codes)
 prefix: "&8[&dPhantom Whitelist&8] &r"
 
-# Whitelist-Einstellungen
+#------------------------------------------------------------------------------
+# WHITELIST SETTINGS
+#------------------------------------------------------------------------------
+
 whitelist:
-  # Ob das Plugin die Server-Whitelist überschreiben soll
+  # Whether to override the server's built-in whitelist (true/false)
   enabled: true
   
-  # Speichermethode: 'file' (Datei), 'mysql' (Datenbank) oder 'both' (beides)
+  # Choose how whitelist data is stored
+  # Options: 'file', 'mysql', or 'both'
   storage-method: 'file'
   
-  # Automatisches Hinzufügen von Spielern bei der ersten Anmeldung
+  # Automatically add players when they first join (true/false)
   auto-add-first-join: false
   
-  # Automatisches Entfernen von Spielern nach X Tagen Inaktivität (0 = deaktiviert)
+  # Automatically remove players after X days of inactivity
+  # Set to 0 to disable this feature
   auto-remove-inactive: 0
 
-# Discord-Integration
+#------------------------------------------------------------------------------
+# DISCORD INTEGRATION
+#------------------------------------------------------------------------------
+
 discord:
-  # Ob die Discord-Integration aktiviert werden soll
+  # Enable Discord integration (true/false)
   enabled: true
   
-  # Bot-Token (WICHTIG: Halte diesen Token geheim!)
-  token: "DEIN_DISCORD_BOT_TOKEN_HIER"
+  #---------------------------------------------------------------------------
+  # BOT CONFIGURATION
+  #---------------------------------------------------------------------------
   
-  # Guild-ID (Server-ID)
-  guild-id: "DEINE_DISCORD_SERVER_ID_HIER"
+  # Your Discord bot token (KEEP THIS SECRET!)
+  token: "YOUR_DISCORD_BOT_TOKEN_HERE"
   
-  # Kanal-ID für Whitelist-Anfragen
-  whitelist-channel-id: "DEINE_KANAL_ID_HIER"
+  # Your Discord server ID
+  guild-id: "YOUR_DISCORD_SERVER_ID_HERE"
   
-  # Rollen-IDs, die automatisch gewhitelisted werden
+  # Timeout for Discord connection (in seconds)
+  connection-timeout: 10
+  
+  # Channel ID for whitelist requests
+  whitelist-channel-id: "YOUR_CHANNEL_ID_HERE"
+  
+  #---------------------------------------------------------------------------
+  # ROLE SETTINGS
+  #---------------------------------------------------------------------------
+  
+  # Discord role IDs that allow players to join the server
   whitelisted-role-ids:
-    - "ROLLE_ID_1"
-    - "ROLLE_ID_2"
+    - "ROLE_ID_1"
+    - "ROLE_ID_2"
   
-  # Admin-Rollen-IDs (können Whitelist-Befehle über Discord ausführen)
+  # Discord role IDs that can execute admin commands
   admin-role-ids:
-    - "ADMIN_ROLLE_ID"
+    - "ADMIN_ROLE_ID"
   
-  # Ob der Bot Statusmeldungen an Discord senden soll
+  #---------------------------------------------------------------------------
+  # DISCORD FEATURES
+  #---------------------------------------------------------------------------
+  
+  # Send status updates to Discord (true/false)
   status-updates: true
   
-  # Befehle über Discord aktivieren
+  # Allow commands to be executed via Discord (true/false)
   enable-commands: true
   
-  # Discord Webhook Logging
+  #---------------------------------------------------------------------------
+  # WEBHOOK LOGGING
+  #---------------------------------------------------------------------------
+  
   webhook:
-    # Ob Logs an einen Discord-Webhook gesendet werden sollen
+    # Enable webhook logging (true/false)
     enabled: false
     
-    # Die Webhook-URL (WICHTIG: Halte diese URL geheim!)
-    url: "DEINE_DISCORD_WEBHOOK_URL_HIER"
+    # Your Discord webhook URL (KEEP THIS SECRET!)
+    url: "YOUR_DISCORD_WEBHOOK_URL_HERE"
     
-    # Ob Nachrichten gesammelt und in Batches gesendet werden sollen
+    # Send messages in batches instead of immediately (true/false)
     use-batching: true
     
-    # Intervall in Sekunden, in dem gesammelte Nachrichten gesendet werden
+    # How often to send batched messages (in seconds)
     batch-interval: 30
     
-    # Minimale Zeit zwischen einzelnen Nachrichten in Millisekunden (5000 = 5 Sekunden)
+    # Minimum time between messages (milliseconds)
+    # 5000 = 5 seconds
     rate-limit: 5000
     
-    # Log-Level für Webhook (WICHTIG: niedrigere Level erzeugen mehr Nachrichten)
-    # Mögliche Werte: ALL, INFO, WARNING, ERROR, NONE
+    # Log level for webhook messages
+    # ┌─────────┬─────────────────────────────────────────┐
+    # │ Level   │ Description                             │
+    # ├─────────┼─────────────────────────────────────────┤
+    # │ ALL     │ All messages (very verbose)             │
+    # │ INFO    │ Informational messages and above        │
+    # │ WARNING │ Warnings and errors only                │
+    # │ ERROR   │ Only error messages                     │
+    # │ NONE    │ No messages                             │
+    # └─────────┴─────────────────────────────────────────┘
     log-level: "WARNING"
 
-# MySQL-Datenbank Einstellungen (nur nötig, wenn storage-method: 'mysql' oder 'both')
+#------------------------------------------------------------------------------
+# DATABASE SETTINGS
+#------------------------------------------------------------------------------
+# Only required if storage-method is set to 'mysql' or 'both'
+
 database:
+  # MySQL server hostname
   host: "localhost"
+  
+  # MySQL server port
   port: 3306
+  
+  # Database name
   database: "minecraft_whitelist"
+  
+  # Database username
   username: "username"
+  
+  # Database password
   password: "password"
+  
+  # Table prefix
   table-prefix: "ph_"
+  
+  # Use SSL for database connection (true/false)
   use-ssl: false
 
-# Nachrichten
-messages:
-  not-whitelisted: "&cDu bist nicht auf der Whitelist dieses Servers!"
-  player-added: "&aSpieler {player} wurde zur Whitelist hinzugefügt."
-  player-removed: "&cSpieler {player} wurde von der Whitelist entfernt."
-  player-not-found: "&cSpieler {player} wurde nicht gefunden."
-  no-permission: "&cDu hast keine Berechtigung, diesen Befehl auszuführen."
-  config-reloaded: "&aKonfiguration wurde neu geladen."
-  
-  # Discord-spezifische Nachrichten
-  discord:
-    request-accepted: "Deine Whitelist-Anfrage wurde akzeptiert! Du kannst jetzt auf den Server joinen."
-    request-denied: "Deine Whitelist-Anfrage wurde abgelehnt."
-    request-format: "Bitte gib deinen Minecraft-Namen ein, um auf die Whitelist gesetzt zu werden."
-    no-role: "Dein Discord-Konto hat nicht die erforderliche Rolle, um auf diesem Server zu spielen!"
-  
-  # Verifizierungs-Nachrichten
-  verification:
-    enter-discord: "Discord-Verifizierung erforderlich!"
-    enter-command: "Verwende /discord <Dein-Discord-Name>"
-    success: "Verifizierung erfolgreich!"
-    welcome: "Willkommen auf dem Server!"
-    timeout: "Zeit abgelaufen! Bitte versuche es später erneut."
+#------------------------------------------------------------------------------
+# ADVANCED SETTINGS
+#------------------------------------------------------------------------------
 
-# Erweiterte Einstellungen
 advanced:
-  # Aktualisierungsintervall für Cache (in Sekunden)
+  # How often to refresh cached data (in seconds)
   cache-refresh: 300
   
-  # Timeout für API-Anfragen (in Millisekunden)
+  # Timeout for API requests (in milliseconds)
   api-timeout: 5000
   
-  # Maximale Anzahl an Verbindungsversuchen zur Datenbank
+  # Maximum database connection attempts before failing
   max-db-connections: 5
   
-  # Zeit in Sekunden, die ein Spieler nach dem Join hat, um seinen Discord-Namen einzugeben
+  # Time allowed for Discord verification (in seconds)
+  # Players are frozen during this time
   verification-timeout: 120
+
+#==============================================================================
+# LANGUAGE SYSTEM
+#==============================================================================
+# Messages are now managed through language files in the 'lang' folder
+# To customize messages, edit the appropriate language file:
+#   plugins/PhantomWhitelist/lang/lang_XX.yml
+#   (where XX is your language code, e.g., en, de, fr)
+#==============================================================================
