@@ -1,23 +1,27 @@
 # PhantomWhitelist
 
-Ein Minecraft Paper/Purpur Server Plugin für die Verwaltung einer Whitelist mit Discord-Integration.
+![PhantomWhitelist Banner](assets/banner.png)
 
-## Funktionen
+*Ein Minecraft Paper/Purpur Server Plugin für die Verwaltung einer Whitelist mit Discord-Integration.*
 
-- Eigene Whitelist-Verwaltung mit Konfigurationsmöglichkeiten
-- Discord-Integration mit Rollenbasierter Whitelist
-- Discord-Webhook-Logging für wichtige Serverereignisse
-- Automatische Spieler-Freeze bei fehlender Discord-Verknüpfung
-- Unterstützung für Minecraft 1.21.1+
-- Kompatibel mit Java 21+
+---
 
-## Anforderungen
+## ✨ Funktionen
 
-- Paper oder Purpur Server (Version 1.21.1 oder höher)
-- Java 21 oder höher
-- Discord-Bot mit entsprechenden Berechtigungen (für die Discord-Integration)
+- 📋 Eigene Whitelist-Verwaltung mit Konfigurationsmöglichkeiten
+- 🤖 Discord-Integration mit Rollenbasierter Whitelist
+- 📢 Discord-Webhook-Logging für wichtige Serverereignisse
+- ⏳ Automatische Spieler-Freeze bei fehlender Discord-Verknüpfung
+- 🎮 Unterstützung für Minecraft 1.21.1+
+- ☕ Kompatibel mit Java 21+
 
-## Installation
+## 📋 Anforderungen
+
+- 📄 Paper oder Purpur Server (Version 1.21.1 oder höher)
+- ☕ Java 21 oder höher
+- 🤖 Discord-Bot mit entsprechenden Berechtigungen (für die Discord-Integration)
+
+## 🚀 Installation
 
 1. Lade die neueste Version des Plugins aus dem [Releases](https://github.com/gerrxt/phantom-whitelist/releases)-Bereich herunter.
 2. Platziere die JAR-Datei in deinem Server-Ordner unter `/plugins`.
@@ -29,7 +33,7 @@ Ein Minecraft Paper/Purpur Server Plugin für die Verwaltung einer Whitelist mit
    - Füge deinen Bot zu deinem Discord-Server hinzu
    - Trage Bot-Token und Server-ID in die config.yml ein
 
-## Konfiguration
+## ⚙️ Konfiguration
 
 Nach dem ersten Start des Plugins wird eine Konfigurationsdatei unter `plugins/PhantomWhitelist/config.yml` erstellt. Hier kannst du alle Einstellungen anpassen:
 
@@ -58,7 +62,7 @@ discord:
     log-level: "WARNING"
 ```
 
-## Funktionsweise
+## 🔄 Funktionsweise
 
 1. Wenn ein Spieler den Server betritt, wird überprüft, ob er bereits mit Discord verknüpft ist
 2. Falls nicht, wird der Spieler eingefroren und aufgefordert, seinen Discord-Namen einzugeben
@@ -67,7 +71,7 @@ discord:
 5. Bei erfolgreicher Verknüpfung kann der Spieler normal spielen
 6. Bei jedem weiteren Login wird überprüft, ob der verknüpfte Discord-Account noch die erforderliche Rolle hat
 
-## Befehle
+## 💬 Befehle
 
 - `/discord <Discord-Name>` - Verknüpft deinen Minecraft-Account mit deinem Discord-Account
 - `/pwhitelist reload` - Lädt die Konfiguration neu
@@ -75,13 +79,13 @@ discord:
 - `/pwhitelist remove <Spielername>` - Entfernt einen Spieler von der Whitelist
 - `/pwhitelist list` - Zeigt alle Spieler auf der Whitelist an
 
-## Berechtigungen
+## 🔑 Berechtigungen
 
 - `phantomwhitelist.command` - Erlaubt die Verwendung der Basisbefehle
 - `phantomwhitelist.reload` - Erlaubt das Neuladen der Konfiguration
 - `phantomwhitelist.admin` - Erlaubt alle administrativen Aktionen
 
-## Discord-Bot Einrichtung
+## 🤖 Discord-Bot Einrichtung
 
 1. Besuche das [Discord Developer Portal](https://discord.com/developers/applications)
 2. Klicke auf "New Application" und gib deinem Bot einen Namen
@@ -94,7 +98,7 @@ discord:
 9. Kopiere die generierte URL und öffne sie in deinem Browser, um den Bot zu deinem Server hinzuzufügen
 10. Aktiviere die Discord-Integration in der config.yml und starte den Server neu
 
-## Discord Webhook Logging
+## 📢 Discord Webhook Logging
 
 Das Plugin kann wichtige Ereignisse auch direkt in einen Discord-Kanal über Webhooks loggen:
 
@@ -120,13 +124,13 @@ Das Plugin kann wichtige Ereignisse auch direkt in einen Discord-Kanal über Web
 
 Die Logs werden farblich formatiert im Discord-Kanal angezeigt:
 
-- Grün für Erfolge und positive Meldungen
-- Rot für Fehler und kritische Probleme
-- Gelb für Warnungen
-- Blau für Informationen
-- Lila für Debug-Meldungen
+- 🟢 Grün für Erfolge und positive Meldungen
+- 🔴 Rot für Fehler und kritische Probleme
+- 🟡 Gelb für Warnungen
+- 🔵 Blau für Informationen
+- 🟣 Lila für Debug-Meldungen
 
-## Entwicklung
+## 💻 Entwicklung
 
 ### Entwicklungsumgebung einrichten
 
@@ -146,10 +150,10 @@ Die Logs werden farblich formatiert im Discord-Kanal angezeigt:
 
 Die kompilierte JAR-Datei findest du im `target`-Ordner.
 
-## Lizenz
+## 📜 Lizenz
 
 Dieses Projekt steht unter der [MIT-Lizenz](LICENSE).
 
-## Credits
+## 👏 Credits
 
-Entwickelt von [gerrxt](https://github.com/gerrxt).
+Entwickelt von [gerrxt](https://github.com/gerrxt07).
