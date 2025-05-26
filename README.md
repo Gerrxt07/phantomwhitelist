@@ -1,6 +1,6 @@
 # PhantomWhitelist
 
-![PhantomWhitelist Banner](assets/banner.png)
+![PhantomWhitelist Banner](https://github.com/Gerrxt07/phantomwhitelist/blob/master/assets/banner.png)
 
 *A Minecraft Paper/Purpur server plugin for whitelist management with Discord integration and multi-language support.*
 
