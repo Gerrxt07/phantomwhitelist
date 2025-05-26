@@ -1,0 +1,68 @@
+# Deutsche Sprachdatei für PhantomWhitelist
+# Version: 1.1.0
+
+plugin:
+  prefix: "&8[&dPhantom Whitelist&8] &r"
+  enable: "PhantomWhitelist wurde erfolgreich aktiviert!"
+  disable: "PhantomWhitelist wird deaktiviert..."
+  reload: "Konfiguration wurde neu geladen."
+  version-info: "Unterstützte Minecraft-Version: {version}"
+  java-info: "Java-Version: {version}"
+
+discord:
+  enabled: "Discord-Integration ist aktiviert und verbunden!"
+  disabled: "Discord-Integration ist derzeit deaktiviert."
+  not-connected: "Discord-Integration ist aktiviert, aber nicht erfolgreich verbunden!"
+  shutdown-error: "Fehler beim Herunterfahren des Discord-Managers: {error}"
+  webhook:
+    enabled: "Discord Webhook-Logging ist aktiviert!"
+    shutdown-error: "Fehler beim Herunterfahren des Webhooks: {error}"
+    send-error: "Fehler beim Senden des Discord-Webhooks: {error}"
+
+verification:
+  player-only: "Dieser Befehl kann nur von Spielern verwendet werden!"
+  enter-discord-name: "Bitte gib deinen Discord-Namen ein!"
+  usage: "Verwendung: /discord <Dein-Discord-Name>"
+  checking: "Überprüfe Discord-Benutzer: {user}..."
+  not-found: "Konnte keinen Discord-Benutzer mit dem Namen {user} finden!"
+  name-check: "Stelle sicher, dass du deinen exakten Discord-Namen angegeben hast."
+  no-role: "Dein Discord-Konto hat nicht die erforderliche Rolle, um auf diesem Server zu spielen!"
+  success: "Dein Minecraft-Konto wurde erfolgreich mit deinem Discord-Konto verknüpft!"
+  header: "----- Discord-Verifizierung -----"
+  required: "Discord-Verifizierung erforderlich!"
+  instruction: "Du musst deinen Discord-Namen eingeben, um auf diesem Server spielen zu können."  command-hint: "Verwende: /discord <Dein-Discord-Name>"
+  time-limit: "Du hast 2 Minuten Zeit, um dich zu verifizieren."
+  player-frozen: "Spieler {player} wurde eingefroren für Discord-Verifizierung."
+  separator: "---------------------------"
+
+whitelist:
+  command:
+    help-title: "PhantomWhitelist Befehle:"
+    help-reload: "/pwhitelist reload - Lädt die Konfiguration neu"
+    help-add: "/pwhitelist add <Spielername> - Fügt einen Spieler zur Whitelist hinzu"
+    help-remove: "/pwhitelist remove <Spielername> - Entfernt einen Spieler von der Whitelist"
+    help-list: "/pwhitelist list - Zeigt alle Spieler auf der Whitelist"
+    list-title: "Spieler auf der Whitelist"
+    list-empty: "Keine Spieler sind auf der Whitelist."
+    player-added: "Spieler {player} wurde zur Whitelist hinzugefügt."
+    player-removed: "Spieler {player} wurde von der Whitelist entfernt."
+    player-not-found: "Spieler {player} wurde nicht gefunden."
+    no-permission: "Du hast keine Berechtigung, diesen Befehl auszuführen!"
+  player:
+    not-whitelisted: "Du bist nicht auf der Whitelist dieses Servers!"
+    rejected-no-role: "Spieler {player} wurde abgelehnt: Keine erforderliche Discord-Rolle!"
+    rejected-no-whitelist: "Spieler {player} wurde abgelehnt: Nicht auf der Whitelist!"
+    login-attempt: "Spieler {player} versucht sich anzumelden..."
+    discord-role-error: "Fehler beim Prüfen der Discord-Rolle für {player}: {error}"
+
+freeze:
+  title: "Discord-Verifizierung erforderlich"
+  subtitle: "Tippe /discord <Dein-Discord-Name>"
+  unfrozen: "Du wurdest entsperrt."
+  timeout-title: "Verifizierungszeit abgelaufen"
+  timeout-subtitle: "Verbindung zum Server getrennt"
+  timeout-kick: "Zeit für die Discord-Verifizierung ist abgelaufen. Bitte versuche es später erneut."
+  timeout-info: "Du hast 2 Minuten Zeit, um dich zu verifizieren."
+
+error:
+  generic: "Ein Fehler ist aufgetreten: {error}"

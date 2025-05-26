@@ -1,0 +1,64 @@
+# Файл русского языка для PhantomWhitelist
+# Версия: 1.1.0
+
+plugin:
+  prefix: "&8[&dPhantom Whitelist&8] &r"
+  enable: "PhantomWhitelist был успешно активирован!"
+  disable: "PhantomWhitelist отключается..."
+  reload: "Конфигурация была перезагружена."
+  version-info: "Поддерживаемая версия Minecraft: {version}"
+  java-info: "Версия Java: {version}"
+
+discord:
+  enabled: "Интеграция с Discord включена и подключена!"
+  disabled: "Интеграция с Discord в настоящее время отключена."
+  not-connected: "Интеграция с Discord включена, но не подключена успешно!"
+  shutdown-error: "Ошибка при выключении менеджера Discord: {error}"
+  webhook:
+    enabled: "Логирование вебхуков Discord включено!"
+    shutdown-error: "Ошибка при выключении вебхука: {error}"
+    send-error: "Ошибка при отправке вебхука Discord: {error}"
+
+whitelist:
+  command:
+    help-title: "Команды PhantomWhitelist:"
+    help-reload: "/pwhitelist reload - Перезагружает конфигурацию"
+    help-add: "/pwhitelist add <игрок> - Добавляет игрока в белый список"
+    help-remove: "/pwhitelist remove <игрок> - Удаляет игрока из белого списка"
+    help-list: "/pwhitelist list - Показывает всех игроков в белом списке"
+    player-added: "Игрок {player} был добавлен в белый список."
+    player-removed: "Игрок {player} был удален из белого списка."
+    player-not-found: "Игрок {player} не найден."
+    no-permission: "У вас нет разрешения на использование этой команды!"
+  player:
+    not-whitelisted: "Вы не находитесь в белом списке этого сервера!"
+    rejected-no-role: "Игрок {player} был отклонен: Нет необходимой роли Discord!"
+    login-attempt: "Игрок {player} пытается войти..."
+    discord-role-error: "Ошибка при проверке роли Discord для {player}: {error}"
+
+verification:
+  player-only: "Эта команда может использоваться только игроками!"
+  enter-discord-name: "Пожалуйста, введите ваше имя в Discord!"
+  usage: "Использование: /discord <Ваше-Имя-в-Discord>"
+  checking: "Проверка пользователя Discord: {user}..."
+  not-found: "Не удалось найти пользователя Discord с именем {user}!"
+  name-check: "Убедитесь, что вы ввели точное имя в Discord."
+  no-role: "У вашей учетной записи Discord нет необходимой роли для игры на этом сервере!"
+  success: "Ваша учетная запись Minecraft была успешно связана с вашей учетной записью Discord!"
+  header: "----- Верификация Discord -----"
+  required: "Требуется верификация Discord!"
+  instruction: "Вам необходимо ввести ваше имя в Discord, чтобы играть на этом сервере."
+  command-hint: "Используйте: /discord <Ваше-Имя-в-Discord>"
+  time-limit: "У вас есть 2 минуты для верификации."
+  frozen: "Игрок {player} был заморожен для верификации Discord."
+
+freeze:
+  title: "Требуется Верификация Discord"
+  subtitle: "Введите /discord <Ваше-Имя-в-Discord>"
+  unfrozen: "Вы были разморожены."
+  timeout-title: "Время Верификации Истекло"
+  timeout-subtitle: "Отключен от сервера"
+  timeout-kick: "Время для верификации Discord истекло. Пожалуйста, попробуйте позже."
+
+error:
+  generic: "Произошла ошибка: {error}"

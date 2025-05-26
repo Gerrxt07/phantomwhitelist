@@ -1,0 +1,84 @@
+# English language file for PhantomWhitelist
+# Version: 1.1.0
+
+plugin:
+  prefix: "&8[&dPhantom Whitelist&8] &r"
+  enable: "PhantomWhitelist has been successfully activated!"
+  disable: "PhantomWhitelist is being deactivated..."
+  reload: "Configuration has been reloaded."
+  version-info: "Supported Minecraft version: {version}"
+  java-info: "Java version: {version}"
+
+discord:
+  enabled: "Discord integration is enabled and connected!"
+  disabled: "Discord integration is currently disabled."
+  not-connected: "Discord integration is enabled but not successfully connected!"
+  shutdown-error: "Error shutting down Discord manager: {error}"
+  webhook:
+    enabled: "Discord webhook logging is enabled!"
+    shutdown-error: "Error shutting down webhook: {error}"
+    send-error: "Error sending Discord webhook: {error}"
+
+whitelist:
+  command:
+    help-title: "PhantomWhitelist Commands:"
+    help-reload: "/pwhitelist reload - Reloads the configuration"
+    help-add: "/pwhitelist add <player> - Adds a player to the whitelist"
+    help-remove: "/pwhitelist remove <player> - Removes a player from the whitelist"
+    help-list: "/pwhitelist list - Shows all players on the whitelist"
+    player-added: "Player {player} has been added to the whitelist."
+    player-removed: "Player {player} has been removed from the whitelist."
+    player-not-found: "Player {player} was not found."
+    no-permission: "You don't have permission to use this command!"
+  player:
+    not-whitelisted: "You are not on the whitelist of this server!"
+    rejected-no-role: "Player {player} was rejected: No required Discord role!"
+    login-attempt: "Player {player} is trying to log in..."
+    discord-role-error: "Error checking Discord role for {player}: {error}"
+
+verification:
+  player-only: "This command can only be used by players!"
+  enter-discord-name: "Please enter your Discord name!"
+  usage: "Usage: /discord <Your-Discord-Name>"
+  checking: "Checking Discord user: {user}..."
+  not-found: "Could not find a Discord user with the name {user}!"
+  name-check: "Make sure you entered your exact Discord name."
+  no-role: "Your Discord account doesn't have the required role to play on this server!"
+  success: "Your Minecraft account has been successfully linked to your Discord account!"
+  header: "----- Discord Verification -----"
+  required: "Discord verification required!"  instruction: "You need to enter your Discord name to play on this server."  command-hint: "Use: /discord <Your-Discord-Name>"
+  time-limit: "You have 2 minutes to verify."
+  player-frozen: "Player {player} has been frozen for Discord verification."
+  separator: "---------------------------"
+
+whitelist:
+  player:
+    not-whitelisted: "You are not on the whitelist of this server!"
+    rejected-no-role: "Player {player} was rejected: No required Discord role!"
+    rejected-no-whitelist: "Player {player} was rejected: Not on the whitelist!"
+    login-attempt: "Player {player} is trying to log in..."
+    discord-role-error: "Error checking Discord role for {player}: {error}"
+  command:
+    help-title: "PhantomWhitelist Commands:"
+    help-reload: "/pwhitelist reload - Reloads the configuration"
+    help-add: "/pwhitelist add <player> - Adds a player to the whitelist"
+    help-remove: "/pwhitelist remove <player> - Removes a player from the whitelist"
+    help-list: "/pwhitelist list - Shows all players on the whitelist"
+    list-title: "Whitelisted players"
+    list-empty: "No players are on the whitelist."
+    player-added: "Player {player} has been added to the whitelist."
+    player-removed: "Player {player} has been removed from the whitelist."
+    player-not-found: "Player {player} was not found."
+    no-permission: "You don't have permission to use this command!"
+
+freeze:
+  title: "Discord Verification Required"
+  subtitle: "Type /discord <Your-Discord-Name>"
+  unfrozen: "You have been unfrozen."
+  timeout-title: "Verification Time Expired"
+  timeout-subtitle: "Disconnected from the server"
+  timeout-kick: "Time for Discord verification has expired. Please try again later."
+  timeout-info: "You have 2 minutes to verify yourself."
+
+error:
+  generic: "An error occurred: {error}"

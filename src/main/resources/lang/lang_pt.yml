@@ -1,0 +1,64 @@
+# Arquivo de idioma português para PhantomWhitelist
+# Versão: 1.1.0
+
+plugin:
+  prefix: "&8[&dPhantom Whitelist&8] &r"
+  enable: "PhantomWhitelist foi ativado com sucesso!"
+  disable: "PhantomWhitelist está sendo desativado..."
+  reload: "Configuração foi recarregada."
+  version-info: "Versão do Minecraft suportada: {version}"
+  java-info: "Versão do Java: {version}"
+
+discord:
+  enabled: "Integração com o Discord está ativada e conectada!"
+  disabled: "Integração com o Discord está atualmente desativada."
+  not-connected: "Integração com o Discord está ativada, mas não conectada com sucesso!"
+  shutdown-error: "Erro ao desligar o gerenciador do Discord: {error}"
+  webhook:
+    enabled: "Registro de webhook do Discord está ativado!"
+    shutdown-error: "Erro ao desligar o webhook: {error}"
+    send-error: "Erro ao enviar webhook do Discord: {error}"
+
+whitelist:
+  command:
+    help-title: "Comandos do PhantomWhitelist:"
+    help-reload: "/pwhitelist reload - Recarrega a configuração"
+    help-add: "/pwhitelist add <jogador> - Adiciona um jogador à lista branca"
+    help-remove: "/pwhitelist remove <jogador> - Remove um jogador da lista branca"
+    help-list: "/pwhitelist list - Mostra todos os jogadores na lista branca"
+    player-added: "Jogador {player} foi adicionado à lista branca."
+    player-removed: "Jogador {player} foi removido da lista branca."
+    player-not-found: "Jogador {player} não foi encontrado."
+    no-permission: "Você não tem permissão para usar este comando!"
+  player:
+    not-whitelisted: "Você não está na lista branca deste servidor!"
+    rejected-no-role: "Jogador {player} foi rejeitado: Sem cargo necessário no Discord!"
+    login-attempt: "Jogador {player} está tentando fazer login..."
+    discord-role-error: "Erro ao verificar o cargo do Discord para {player}: {error}"
+
+verification:
+  player-only: "Este comando só pode ser usado por jogadores!"
+  enter-discord-name: "Por favor, digite seu nome do Discord!"
+  usage: "Uso: /discord <Seu-Nome-do-Discord>"
+  checking: "Verificando usuário do Discord: {user}..."
+  not-found: "Não foi possível encontrar um usuário do Discord com o nome {user}!"
+  name-check: "Certifique-se de ter digitado seu nome exato do Discord."
+  no-role: "Sua conta do Discord não tem o cargo necessário para jogar neste servidor!"
+  success: "Sua conta do Minecraft foi vinculada com sucesso à sua conta do Discord!"
+  header: "----- Verificação do Discord -----"
+  required: "Verificação do Discord necessária!"
+  instruction: "Você precisa digitar seu nome do Discord para jogar neste servidor."
+  command-hint: "Use: /discord <Seu-Nome-do-Discord>"
+  time-limit: "Você tem 2 minutos para se verificar."
+  frozen: "Jogador {player} foi congelado para verificação do Discord."
+
+freeze:
+  title: "Verificação do Discord Necessária"
+  subtitle: "Digite /discord <Seu-Nome-do-Discord>"
+  unfrozen: "Você foi descongelado."
+  timeout-title: "Tempo de Verificação Expirou"
+  timeout-subtitle: "Desconectado do servidor"
+  timeout-kick: "O tempo para verificação do Discord expirou. Por favor, tente novamente mais tarde."
+
+error:
+  generic: "Ocorreu um erro: {error}"

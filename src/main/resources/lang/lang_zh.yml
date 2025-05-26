@@ -1,0 +1,64 @@
+# PhantomWhitelist 的简体中文语言文件
+# 版本: 1.1.0
+
+plugin:
+  prefix: "&8[&dPhantom Whitelist&8] &r"
+  enable: "PhantomWhitelist 已成功激活！"
+  disable: "PhantomWhitelist 正在停用..."
+  reload: "配置已重新加载。"
+  version-info: "支持的 Minecraft 版本：{version}"
+  java-info: "Java 版本：{version}"
+
+discord:
+  enabled: "Discord 集成已启用并连接！"
+  disabled: "Discord 集成当前已禁用。"
+  not-connected: "Discord 集成已启用但未成功连接！"
+  shutdown-error: "关闭 Discord 管理器时出错：{error}"
+  webhook:
+    enabled: "Discord webhook 日志记录已启用！"
+    shutdown-error: "关闭 webhook 时出错：{error}"
+    send-error: "发送 Discord webhook 时出错：{error}"
+
+whitelist:
+  command:
+    help-title: "PhantomWhitelist 命令："
+    help-reload: "/pwhitelist reload - 重新加载配置"
+    help-add: "/pwhitelist add <玩家> - 将玩家添加到白名单"
+    help-remove: "/pwhitelist remove <玩家> - 从白名单中移除玩家"
+    help-list: "/pwhitelist list - 显示白名单上的所有玩家"
+    player-added: "玩家 {player} 已添加到白名单。"
+    player-removed: "玩家 {player} 已从白名单中移除。"
+    player-not-found: "未找到玩家 {player}。"
+    no-permission: "您没有使用此命令的权限！"
+  player:
+    not-whitelisted: "您不在此服务器的白名单上！"
+    rejected-no-role: "玩家 {player} 被拒绝：没有所需的 Discord 角色！"
+    login-attempt: "玩家 {player} 正在尝试登录..."
+    discord-role-error: "检查 {player} 的 Discord 角色时出错：{error}"
+
+verification:
+  player-only: "此命令只能由玩家使用！"
+  enter-discord-name: "请输入您的 Discord 名称！"
+  usage: "用法：/discord <您的-Discord-名称>"
+  checking: "正在检查 Discord 用户：{user}..."
+  not-found: "找不到名为 {user} 的 Discord 用户！"
+  name-check: "请确保您输入了准确的 Discord 名称。"
+  no-role: "您的 Discord 账户没有在此服务器上游戏所需的角色！"
+  success: "您的 Minecraft 账户已成功与您的 Discord 账户关联！"
+  header: "----- Discord 验证 -----"
+  required: "需要 Discord 验证！"
+  instruction: "您需要输入您的 Discord 名称才能在此服务器上游戏。"
+  command-hint: "使用：/discord <您的-Discord-名称>"
+  time-limit: "您有 2 分钟时间进行验证。"
+  frozen: "玩家 {player} 已被冻结以进行 Discord 验证。"
+
+freeze:
+  title: "需要 Discord 验证"
+  subtitle: "输入 /discord <您的-Discord-名称>"
+  unfrozen: "您已被解冻。"
+  timeout-title: "验证时间已过期"
+  timeout-subtitle: "与服务器断开连接"
+  timeout-kick: "Discord 验证时间已过期。请稍后再试。"
+
+error:
+  generic: "发生错误：{error}"
