@@ -1,4 +1,4 @@
-![PhantomWhitelist Banner](assets/banner.png)
+![PhantomWhitelist Banner](https://github.com/Gerrxt07/phantomwhitelist/blob/master/assets/banner.png)
 
 Die erste stabile Version des PhantomWhitelist Plugins für Minecraft Paper/Purpur Server
 
