@@ -58,9 +58,8 @@ Updated version of the Phantom Whitelist Plugin for Minecraft Paper/Purpur Serve
 
 1. Stop your server
 2. Replace the old JAR file with the new v1.1.0 version
-2.1 We recommend a complete reinstallation of the plugin
 3. Restart your server
-4. The configuration will be automatically updated, existing settings will remain. Please check your config file!
+4. The configuration will be automatically updated, existing settings will remain. Please check your config file! - We recommend a complete reinstallation of the plugin (With deleting old Config)
 
 ## ⚙️ Configuration
 
