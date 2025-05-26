@@ -33,35 +33,6 @@
    - Füge deinen Bot zu deinem Discord-Server hinzu
    - Trage Bot-Token und Server-ID in die config.yml ein
 
-## ⚙️ Konfiguration
-
-Nach dem ersten Start des Plugins wird eine Konfigurationsdatei unter `plugins/PhantomWhitelist/config.yml` erstellt. Hier kannst du alle Einstellungen anpassen:
-
-```yaml
-# Whitelist-Einstellungen
-whitelist:
-  enabled: true
-  storage-method: 'file'
-
-# Discord-Integration
-discord:
-  enabled: true
-  token: "DEIN_DISCORD_BOT_TOKEN_HIER"
-  guild-id: "DEINE_DISCORD_SERVER_ID_HIER"
-  whitelisted-role-ids:
-    - "ROLLE_ID_1"
-    - "ROLLE_ID_2"
-    
-  # Discord Webhook Logging
-  webhook:
-    enabled: false
-    url: "DEINE_DISCORD_WEBHOOK_URL_HIER"
-    use-batching: true
-    batch-interval: 30
-    rate-limit: 5000
-    log-level: "WARNING"
-```
-
 ## 🔄 Funktionsweise
 
 1. Wenn ein Spieler den Server betritt, wird überprüft, ob er bereits mit Discord verknüpft ist
@@ -98,6 +69,26 @@ discord:
 9. Kopiere die generierte URL und öffne sie in deinem Browser, um den Bot zu deinem Server hinzuzufügen
 10. Aktiviere die Discord-Integration in der config.yml und starte den Server neu
 
+## ⚙️ Konfiguration
+
+Nach dem ersten Start des Plugins wird eine Konfigurationsdatei unter `plugins/PhantomWhitelist/config.yml` erstellt. Hier kannst du alle Einstellungen anpassen:
+
+```yaml
+# Whitelist-Einstellungen
+whitelist:
+  enabled: true
+  storage-method: 'file'
+
+# Discord-Integration
+discord:
+  enabled: true
+  token: "DEIN_DISCORD_BOT_TOKEN_HIER"
+  guild-id: "DEINE_DISCORD_SERVER_ID_HIER"
+  whitelisted-role-ids:
+    - "ROLLE_ID_1"
+    - "ROLLE_ID_2"
+```
+
 ## 📢 Discord Webhook Logging
 
 Das Plugin kann wichtige Ereignisse auch direkt in einen Discord-Kanal über Webhooks loggen:
@@ -110,10 +101,14 @@ Das Plugin kann wichtige Ereignisse auch direkt in einen Discord-Kanal über Web
 2. Füge die Webhook-URL in die Konfigurationsdatei ein:
 
    ```yaml
-   discord:
-     webhook:
-       enabled: true
-       url: "DEINE_DISCORD_WEBHOOK_URL_HIER"
+   # Discord Webhook Logging
+   webhook:
+      enabled: false
+      url: "DEINE_DISCORD_WEBHOOK_URL_HIER"
+      use-batching: true
+      batch-interval: 30
+      rate-limit: 5000
+      log-level: "WARNING"
    ```
 
 3. Konfiguriere die Webhook-Einstellungen nach deinen Bedürfnissen:
