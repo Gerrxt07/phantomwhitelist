@@ -1,10 +1,6 @@
-<<<<<<< HEAD
 # PhantomWhitelist v1.0.0
 
-![PhantomWhitelist Banner](assets/banner.png)
-=======
-![PhantomWhitelist Banner](https://github.com/Gerrxt07/phantomwhitelist/blob/master/assets/banner.png)
->>>>>>> 0110038909efa0f077a75ca173d3bedc7779a2bc
+![PhantomWhitelist Banner]([assets/banner.png](https://github.com/Gerrxt07/phantomwhitelist/blob/master/assets/banner.png))
 
 The first stable version of the PhantomWhitelist Plugin for Minecraft Paper/Purpur Server
 
@@ -87,8 +83,4 @@ Special thanks to:
 
 For problems or questions, please open a [GitHub Issue](https://github.com/gerrxt/phantomwhitelist/issues) or join our [Discord Server](https://discord.gg/phantomwhitelist).
 
-<<<<<<< HEAD
-© 2025 gerrxt | [MIT License](LICENSE)
-=======
-© 2025 gerrxt | [MIT-Lizenz](LICENSE)
->>>>>>> 0110038909efa0f077a75ca173d3bedc7779a2bc
+© 2025 gerrxt
