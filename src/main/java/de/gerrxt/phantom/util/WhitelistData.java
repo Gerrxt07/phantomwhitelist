@@ -26,7 +26,7 @@ public class WhitelistData {
         // Singleton-Pattern
     }
     
-    public static WhitelistData getInstance() {
+    public static synchronized WhitelistData getInstance() {
         if (instance == null) {
             instance = new WhitelistData();
         }
@@ -39,23 +39,34 @@ public class WhitelistData {
      * @param plugin Die Plugin-Instanz
      */
     public void initialize(Main plugin) {
+        if (this.plugin != null) {
+            // Verhindert doppelte Initialisierung
+            return;
+        }
+        
         this.plugin = plugin;
         this.console = plugin.getConsole();
         
         // Sicherstellen, dass das Datenverzeichnis existiert
-        if (!plugin.getDataFolder().exists()) {
-            plugin.getDataFolder().mkdirs();
+        File dataFolder = plugin.getDataFolder();
+        if (!dataFolder.exists() && !dataFolder.mkdirs()) {
+            console.error("Konnte das Datenverzeichnis nicht erstellen: " + dataFolder.getAbsolutePath());
+            return;
         }
         
         // Daten-Datei einrichten
-        dataFile = new File(plugin.getDataFolder(), "whitelist_data.yml");
+        dataFile = new File(dataFolder, "whitelist_data.yml");
         if (!dataFile.exists()) {
             try {
                 if (dataFile.createNewFile()) {
                     console.success("Whitelist-Datendatei erstellt: " + dataFile.getAbsolutePath());
+                } else {
+                    console.error("Konnte die Whitelist-Datendatei nicht erstellen: " + dataFile.getAbsolutePath());
+                    return;
                 }
             } catch (IOException e) {
                 console.exception("Konnte whitelist_data.yml nicht erstellen", e);
+                return;
             }
         }
         
