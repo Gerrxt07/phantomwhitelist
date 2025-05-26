@@ -154,6 +154,7 @@ Hier ist unsere Roadmap für die zukünftige Entwicklung von PhantomWhitelist:
 - 💡 Konzeptphase
 - 🔮 Langfristige Vision
 
+Wir haben auch ein Interaktives und Aktualisiertes [Trello Board](https://trello.com/b/PEWsQBMy/phantom-whitelist)!
 Möchtest du an der Entwicklung teilnehmen oder hast du Funktionswünsche? [Eröffne ein Issue](https://github.com/gerrxt07/phantom-whitelist/issues) oder tritt unserem [Discord-Server](https://phantomcommunity.de/discord) bei!
 
 ## 💻 Entwicklung
