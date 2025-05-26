@@ -17,7 +17,7 @@
 
 ## 📋 Anforderungen
 
-- 📄 Paper oder Purpur Server (Version 1.21.1 oder höher)
+- 📄 Paper Basierter Server (Version 1.21.1 oder höher - PaperMC, Purpur, Pufferfisch, CanvasMC etc.)
 - ☕ Java 21 oder höher
 - 🤖 Discord-Bot mit entsprechenden Berechtigungen (für die Discord-Integration)
 
