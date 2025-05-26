@@ -1,0 +1,31 @@
+name: PhantomWhitelist
+version: '${project.version}'
+main: de.gerrxt.phantom.Main
+api-version: '1.21'
+author: gerrxt
+description: '${project.description}'
+website: https://github.com/gerrxt/phantom-whitelist
+load: STARTUP
+commands:
+  pwhitelist:
+    description: Hauptbefehl für das PhantomWhitelist-Plugin
+    usage: /pwhitelist <reload|add|remove|list> [Spielername]
+    aliases: [pwl]
+    permission: phantomwhitelist.command
+  discord:
+    description: Verknüpft deinen Minecraft-Account mit deinem Discord-Account
+    usage: /discord <Discord-Name>
+    aliases: [dc]
+permissions:
+  phantomwhitelist.command:
+    description: Erlaubt die Verwendung der Basisbefehle
+    default: op
+  phantomwhitelist.reload:
+    description: Erlaubt das Neuladen der Konfiguration
+    default: op
+  phantomwhitelist.admin:
+    description: Erlaubt alle administrativen Aktionen
+    default: op
+    children:
+      phantomwhitelist.command: true
+      phantomwhitelist.reload: true
