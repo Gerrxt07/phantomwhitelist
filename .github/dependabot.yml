@@ -1,0 +1,43 @@
+# Dependabot-Konfiguration für PhantomWhitelist
+# Automatische Abhängigkeitsprüfung und Updates
+
+version: 2
+updates:
+  # Maven-Abhängigkeiten überwachen
+  - package-ecosystem: "maven"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "08:00"
+      timezone: "Europe/Berlin"
+    open-pull-requests-limit: 10
+    target-branch: "main"
+    labels:
+      - "dependencies"
+      - "java"
+    assignees:
+      - "gerrxt"
+    reviewers:
+      - "gerrxt"
+    commit-message:
+      prefix: "⬆️ deps"
+      include: "scope"
+    # Ignoriere bestimmte Abhängigkeiten (optional)
+    # ignore:
+    #   - dependency-name: "org.example:example-lib"
+
+  # GitHub Actions überwachen (falls du Actions verwenden solltest)
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "monthly"
+    open-pull-requests-limit: 5
+    labels:
+      - "dependencies"
+      - "github-actions"
+    assignees:
+      - "gerrxt"
+    commit-message:
+      prefix: "⬆️ actions"
+      include: "scope"
