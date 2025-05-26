@@ -20,15 +20,16 @@ import java.util.UUID;
 public class PlayerFreezeManager implements Listener {
     
     private final Main plugin;
+    private final LanguageManager lang;
     private final Map<UUID, Long> frozenPlayers = new HashMap<>();
     private final Map<UUID, Integer> reminderTasks = new HashMap<>();
     
     public PlayerFreezeManager(Main plugin) {
         this.plugin = plugin;
+        this.lang = plugin.getLanguageManager();
         Bukkit.getPluginManager().registerEvents(this, plugin);
     }
-    
-    /**
+      /**
      * Friert einen Spieler ein, bis er seinen Discord-Namen eingibt
      * 
      * @param player Der einzufrierende Spieler
@@ -40,15 +41,12 @@ public class PlayerFreezeManager implements Listener {
         frozenPlayers.put(playerId, System.currentTimeMillis() + (2 * 60 * 1000)); // 2 Minuten
         
         // Nachricht anzeigen
-        String message = plugin.getConfig().getString("messages.verification.enter-discord", 
-                "Du musst deinen Discord-Namen eingeben, um zu spielen!");
-        String subtitle = plugin.getConfig().getString("messages.verification.enter-command", 
-                "Verwende /discord <Dein-Discord-Name>");
+        String message = lang.getMessage("freeze.title");
+        String subtitle = lang.getMessage("freeze.subtitle");
         
         // Titel-Zeiten erstellen
         Title.Times times = Title.Times.times(Duration.ZERO, Duration.ofSeconds(10), Duration.ofSeconds(1));
-        
-        // Titel erstellen und anzeigen
+          // Titel erstellen und anzeigen
         Title title = Title.title(
                 Component.text(message).color(NamedTextColor.RED),
                 Component.text(subtitle).color(NamedTextColor.YELLOW),
@@ -70,9 +68,18 @@ public class PlayerFreezeManager implements Listener {
                 // Prüfen, ob die Zeit abgelaufen ist
                 long endTime = frozenPlayers.get(playerId);
                 if (System.currentTimeMillis() > endTime) {
-                    player.kick(Component.text(plugin.getConfig().getString("messages.verification.timeout", 
-                            "Zeit abgelaufen! Bitte versuche es später erneut.")).color(NamedTextColor.RED));
-                    unfreezePlayer(player);
+                    Title timeoutTitle = Title.title(
+                            Component.text(lang.getMessage("freeze.timeout-title")).color(NamedTextColor.RED),
+                            Component.text(lang.getMessage("freeze.timeout-subtitle")).color(NamedTextColor.YELLOW),
+                            Title.Times.times(Duration.ZERO, Duration.ofSeconds(3), Duration.ofSeconds(1))
+                    );
+                    player.showTitle(timeoutTitle);
+                    
+                    // Kurze Verzögerung vor dem Kick, damit der Spieler den Titel sehen kann
+                    Bukkit.getScheduler().scheduleSyncDelayedTask(plugin, () -> {
+                        player.kick(Component.text(lang.getMessage("freeze.timeout-kick")).color(NamedTextColor.RED));
+                        unfreezePlayer(player);
+                    }, 60L); // 3 Sekunden
                 }
             } else {
                 // Aufgabe beenden, wenn der Spieler nicht mehr eingefroren ist
@@ -82,8 +89,7 @@ public class PlayerFreezeManager implements Listener {
         
         reminderTasks.put(playerId, taskId);
     }
-    
-    /**
+      /**
      * Entsperrt einen eingefrorenen Spieler
      * 
      * @param player Der zu entsperrende Spieler
@@ -102,10 +108,8 @@ public class PlayerFreezeManager implements Listener {
         
         // Erfolgsnachricht anzeigen
         player.showTitle(Title.title(
-                Component.text(plugin.getConfig().getString("messages.verification.success", 
-                        "Verifizierung erfolgreich!")).color(NamedTextColor.GREEN),
-                Component.text(plugin.getConfig().getString("messages.verification.welcome", 
-                        "Willkommen auf dem Server!")).color(NamedTextColor.YELLOW),
+                Component.text(lang.getMessage("freeze.unfrozen")).color(NamedTextColor.GREEN),
+                Component.text("").color(NamedTextColor.YELLOW),
                 times
         ));
     }
