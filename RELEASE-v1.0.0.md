@@ -1,6 +1,6 @@
 # PhantomWhitelist v1.0.0
 
-![PhantomWhitelist Banner]([assets/banner.png](https://github.com/Gerrxt07/phantomwhitelist/blob/master/assets/banner.png)
+![PhantomWhitelist Banner](https://github.com/Gerrxt07/phantomwhitelist/blob/master/assets/banner.png)
 
 The first stable version of the PhantomWhitelist Plugin for Minecraft Paper/Purpur Server
 
