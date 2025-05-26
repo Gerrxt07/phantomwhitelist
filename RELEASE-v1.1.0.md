@@ -1,6 +1,6 @@
 # PhantomWhitelist v1.1.0
 
-![PhantomWhitelist Banner](assets/banner.png)
+![PhantomWhitelist Banner](https://github.com/Gerrxt07/phantomwhitelist/blob/master/assets/banner.png)
 
 Updated version of the Phantom Whitelist Plugin for Minecraft Paper/Purpur Server with multi-language support, numerous stability and performance improvements. Text has been rewritten and translations for 8 languages have been added.
 
@@ -94,4 +94,4 @@ These parameters can be used to adjust the language of the plugin and the timeou
 
 For problems or questions, please open a [GitHub Issue](https://github.com/gerrxt07/phantomwhitelist/issues) or join our [Discord Server](https://discord.gg/phantomwhitelist).
 
-© 2025 gerrxt | [MIT License](LICENSE)
+© 2025 gerrxt
